@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
+  
 </head>
 <body>
   <!-- Navigation -->
@@ -24,11 +25,13 @@
   </nav>
 
   <div class="page">
-    <a href="../index.html" class="back-home">Back to Home</a>
+    <a href="../index.html" class="back-home">Back to all projects</a>
 
     <article class="project-detail">
       <!-- Hero Image -->
-      <div class="project-detail-hero"></div>
+      <div class="project-detail-hero">
+        <img src="../assets/images/livehindustan-hero.png" alt="Livehindustan News Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
 
       <!-- Title & Meta -->
       <h1 class="project-detail-title">High-Volume News Scalability</h1>
@@ -60,7 +63,7 @@
         </div>
       </div>
 
-      <!-- Overview -->
+      <!-- Project Overview -->
       <section class="project-detail-section">
         <h2>Project Overview</h2>
         <p>
@@ -97,6 +100,35 @@
           <li><strong>Technical Infrastructure:</strong> Fixed crawl issues (breadcrumbs, pagination, AMP), improved Core Web Vitals, and implemented responsive design for news snippets.</li>
         </ul>
       </section>
+
+      <!-- Gallery Section: Insights & Screenshots -->
+      <div class="gallery-section-title">📊 Insights & Results Gallery</div>
+      <div class="project-gallery">
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Traffic+Growth+Chart" alt="Traffic Growth Over Time">
+          <div class="gallery-item-caption">Traffic Growth Chart</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Discover+Rankings" alt="Google Discover Rankings">
+          <div class="gallery-item-caption">Google Discover Rankings</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Keyword+Performance" alt="Keyword Performance Dashboard">
+          <div class="gallery-item-caption">Keyword Performance</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Event+Coverage+Results" alt="Event Coverage SEO Results">
+          <div class="gallery-item-caption">Event Coverage Results</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Ranking+Distribution" alt="Ranking Distribution By Position">
+          <div class="gallery-item-caption">Ranking Distribution</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="https://via.placeholder.com/400x300/1a4d7f/ffffff?text=Core+Web+Vitals" alt="Core Web Vitals Improvement">
+          <div class="gallery-item-caption">Core Web Vitals</div>
+        </div>
+      </div>
 
       <!-- Daily Work -->
       <section class="project-detail-section">
@@ -158,5 +190,43 @@
       </div>
     </article>
   </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="Full size image">
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(event) {
+      const img = event.currentTarget.querySelector('img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+
+    // Close lightbox when clicking outside the image
+    document.getElementById('lightbox').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>

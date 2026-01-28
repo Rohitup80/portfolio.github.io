@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Entrepreneurial Success & Exit - Rohit Kumar</title>
+  <title>News Sateek - Personal Blog Success & Exit - Rohit Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
@@ -24,11 +24,13 @@
   </nav>
 
   <div class="page">
-    <a href="../index.html" class="back-home">Back to Home</a>
+    <a href="../index.html" class="back-home">Back to all projects</a>
 
     <article class="project-detail">
       <!-- Hero Image -->
-      <div class="project-detail-hero"></div>
+      <div class="project-detail-hero">
+        <img src="../assets/images/newssateek-hero.jpg" alt="News Sateek Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
 
       <!-- Title & Meta -->
       <h1 class="project-detail-title">Entrepreneurial Success & Exit</h1>
@@ -60,7 +62,7 @@
         </div>
       </div>
 
-      <!-- Overview -->
+      <!-- Project Overview -->
       <section class="project-detail-section">
         <h2>Project Overview</h2>
         <p>
@@ -101,6 +103,35 @@
           <li><strong>Growth Acceleration (Month 6+):</strong> Analyzed top-performing content and created topic clusters around high-traffic pieces. Built internal links and published related guides to maximize cluster value.</li>
         </ul>
       </section>
+
+      <!-- Gallery Section: Insights & Screenshots -->
+      <div class="gallery-section-title">📊 Insights & Results Gallery</div>
+      <div class="project-gallery">
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-growth-graph.jpg" alt="Growth Graph 0 to 20K">
+          <div class="gallery-item-caption">Growth Graph</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-profitability.jpg" alt="Profitability Timeline">
+          <div class="gallery-item-caption">Profitability</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-monthly-revenue.jpg" alt="Monthly Revenue Growth">
+          <div class="gallery-item-caption">Monthly Revenue</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-traffic-sources.jpg" alt="Traffic Sources Distribution">
+          <div class="gallery-item-caption">Traffic Sources</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-content-performance.jpg" alt="Content Performance Analysis">
+          <div class="gallery-item-caption">Content Performance</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(event)">
+          <img src="../assets/images/newssateek-exit-valuation.jpg" alt="Exit Valuation & Deal">
+          <div class="gallery-item-caption">Exit Valuation</div>
+        </div>
+      </div>
 
       <!-- Daily Work -->
       <section class="project-detail-section">
@@ -162,5 +193,41 @@
       </div>
     </article>
   </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="Full size image">
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(event) {
+      const img = event.currentTarget.querySelector('img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
