@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Finance & Premium Subscription Growth - Rohit Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="page">
+      <div class="nav-content">
+        <a href="../index.html" class="nav-logo">Ravi Kumar</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+    <a href="../index.html" class="back-home">Back to all projects</a>
+
+    <article class="project-detail">
+      <!-- Hero Image -->
+      <div class="project-detail-hero"></div>
+
+      <!-- Title & Meta -->
+      <h1 class="project-detail-title">Finance & Premium Subscription Growth</h1>
+      <div class="project-detail-meta">
+        <div class="project-detail-meta-item">
+          <strong>Company:</strong> Livemint.com (HT Digital)
+        </div>
+        <div class="project-detail-meta-item">
+          <strong>Role:</strong> Sr. SEO Analyst
+        </div>
+        <div class="project-detail-meta-item">
+          <strong>Duration:</strong> 2+ Years
+        </div>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="project-detail-metrics">
+        <div class="metric-card">
+          <div class="metric-label">Personal Finance Traffic</div>
+          <div class="metric-value">300K → 500K</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Premium Section Traffic</div>
+          <div class="metric-value">70K → 120K</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Page 1 Keywords</div>
+          <div class="metric-value">5K+</div>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <section class="project-detail-section">
+        <h2>Project Overview</h2>
+        <p>
+          Livemint.com is India's premier personal finance and business news website. The challenge was growing organic visibility 
+          for high-value YMYL (Your Money Your Life) content while driving traffic to premium/paywalled sections. Over 2 years, 
+          I implemented a technical SEO and schema-driven strategy that increased both audience reach and subscription-driven revenue.
+        </p>
+      </section>
+
+      <!-- Challenge -->
+      <section class="project-detail-section">
+        <h2>Challenge</h2>
+        <p>
+          Finance content faces unique constraints in the SEO landscape:
+        </p>
+        <ul>
+          <li><strong>YMYL Authority:</strong> Google prioritizes expertise, authority, and trustworthiness for money-related queries. Competing against established financial institutions and government sites is difficult.</li>
+          <li><strong>Paywalled Content:</strong> Premium articles don't appear fully in search results, making optimization for impressions vs. clicks crucial.</li>
+          <li><strong>Search Intent Complexity:</strong> Finance queries have varying intent (educational, transactional, informational), requiring nuanced content strategy.</li>
+          <li><strong>Subscription Conversion:</strong> Driving traffic is only half the battle—converting free readers to paid subscribers requires clear value propositions.</li>
+          <li><strong>Core Web Vitals:</strong> Paywall implementation and ad-heavy layouts often harm page speed and user experience signals.</li>
+        </ul>
+      </section>
+
+      <!-- Strategy -->
+      <section class="project-detail-section">
+        <h2>Strategy & Execution</h2>
+        <p>
+          I took a multi-pronged approach combining technical SEO, content strategy, and schema markup:
+        </p>
+        <ul>
+          <li><strong>Schema Markup for Finance:</strong> Implemented Schema.org markup for FinancialProduct, HowTo, and Review types to capture rich snippets and showcase expertise. This included investment guides, mutual fund comparisons, and tax planning articles.</li>
+          <li><strong>Core Web Vitals Optimization:</strong> Improved Largest Contentful Paint (LCP) by optimizing paywall JavaScript, deferring non-critical ads, and implementing lazy loading for images. Achieved good CWV scores on 80%+ of pages.</li>
+          <li><strong>Theme Analysis & Content Gaps:</strong> Used Semrush and Ahrefs to identify underperforming finance topics (e.g., retirement planning, IPO guides). Created comprehensive clusters around these gaps to build topical authority.</li>
+          <li><strong>Internal Linking Strategy:</strong> Built semantic internal links between related finance topics (e.g., from savings accounts → fixed deposits → mutual funds). This improved crawl efficiency and topic relevance.</li>
+          <li><strong>Premium Content SEO:</strong> Optimized teaser paragraphs for premium articles to rank for high-value keywords while enticing clicks to the paywall. Tracked "paywall click" events in Analytics as a conversion metric.</li>
+        </ul>
+      </section>
+
+      <!-- Daily Work -->
+      <section class="project-detail-section">
+        <h2>Daily Responsibilities</h2>
+        <ul>
+          <li><strong>Theme Analysis (Weekly):</strong> Analyzed competitor content, search volumes, and current rankings to identify gaps. Prioritized topics with high intent and low competitive density.</li>
+          <li><strong>JIRA Ticket Management:</strong> Created and prioritized technical tickets for the engineering team (e.g., "Add markup to mutual fund pages", "Optimize paywall load time", "Implement breadcrumb schema").</li>
+          <li><strong>Schema Implementation:</strong> Guided developers on correct JSON-LD implementation for finance content. Validated markup using Google Rich Result Test and Schema.org validator.</li>
+          <li><strong>Content Briefs:</strong> Created SEO-optimized briefs for writers including target keywords, question angles, and internal linking recommendations.</li>
+          <li><strong>Core Web Vitals Monitoring:</strong> Tracked CWV metrics in Google Search Console and PageSpeed Insights. Identified bottlenecks and coordinated fixes with dev team.</li>
+          <li><strong>Reporting (Monthly):</strong> Built Looker Studio dashboards tracking keyword rankings, organic traffic to premium content, and paywall conversion rates.</li>
+        </ul>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="project-detail-section">
+        <h2>Tools & Technologies</h2>
+        <div class="skill-pill-row">
+          <span class="skill-pill">Semrush</span>
+          <span class="skill-pill">Ahrefs</span>
+          <span class="skill-pill">JIRA</span>
+          <span class="skill-pill">Google Search Console</span>
+          <span class="skill-pill">Looker Studio</span>
+          <span class="skill-pill">JSON-LD Schema</span>
+          <span class="skill-pill">PageSpeed Insights</span>
+          <span class="skill-pill">Google Analytics</span>
+          <span class="skill-pill">Core Web Vitals</span>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="project-detail-section">
+        <h2>Results & Impact</h2>
+        <ul>
+          <li><strong>Personal Finance Growth:</strong> Scaled organic traffic from 300K to 500K monthly users (+67% growth) through comprehensive keyword coverage and improved rankings.</li>
+          <li><strong>Premium Section Success:</strong> Increased premium/paywalled content traffic from 70K to 120K monthly users (+71% growth), directly contributing to subscription revenue.</li>
+          <li><strong>Keyword Dominance:</strong> Captured 5,000+ Page 1 rankings for competitive finance terms including "mutual fund SIP", "tax saving investments", "best high-yield savings accounts".</li>
+          <li><strong>Rich Snippet Success:</strong> 40%+ of finance articles now appear with rich snippets or answer boxes, improving CTR by 25% on average.</li>
+          <li><strong>Authority Building:</strong> Became the go-to resource for Indian personal finance information, reflected in improved Domain Authority and brand search volume.</li>
+        </ul>
+      </section>
+
+      <!-- Learnings -->
+      <section class="project-detail-section">
+        <h2>Key Learnings</h2>
+        <ul>
+          <li>YMYL content requires deep subject matter expertise. Simply optimizing keywords won't build authority—publish genuinely helpful, well-researched content.</li>
+          <li>Schema markup is not optional for finance. Rich snippets and structured data are critical for standing out in SERPs and building trust.</li>
+          <li>Core Web Vitals matter more for finance than other verticals. Slow sites with paywalls lose both rankings and user trust.</li>
+          <li>Internal linking between related finance topics is as valuable as external links for building topical authority and improving crawl efficiency.</li>
+          <li>Paywall optimization is an art. The goal is ranking high while maintaining enough intrigue to drive clicks and conversions.</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="project-detail-cta">
+        <a href="mailto:rokumar350@gmail.com" class="btn-primary">Get in touch</a>
+        <a href="../index.html" class="btn-secondary">View other projects</a>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
