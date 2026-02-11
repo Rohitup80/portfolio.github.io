@@ -3,7 +3,6 @@ async function checkUrl() {
     const urlInput = document.getElementById('urlInput').value.trim();
     if (!urlInput) return alert("Please enter a URL");
 
-    // 1. Ensure the URL has http/https prefix
     let targetUrl = urlInput;
     if (!/^https?:\/\//i.test(targetUrl)) {
         targetUrl = 'https://' + targetUrl;
@@ -12,29 +11,35 @@ async function checkUrl() {
     statusDisplay.innerText = "Fetching...";
     statusDisplay.className = "text-xl font-bold text-indigo-400 animate-pulse";
     
+    // We try Proxy A, and if it fails, we can eventually add Proxy B
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+    
     try {
-        // 2. Using corsproxy.io (It returns raw text, not JSON)
-        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-        
         const response = await fetch(proxyUrl);
         
-        if (!response.ok) throw new Error("Proxy could not reach the site.");
+        if (!response.ok) {
+            throw new Error(`Proxy error: ${response.status}`);
+        }
         
-        // 3. Get the result as TEXT, not JSON
         const htmlContent = await response.text();
         
-        if (htmlContent && htmlContent.trim().length > 0) {
-            // 4. Put the fetched HTML into the textarea
+        if (htmlContent && htmlContent.length > 50) { // Check if we got actual HTML
             htmlInput.value = htmlContent;
-            
-            // 5. Trigger the 'input' event to run the size calculations
             htmlInput.dispatchEvent(new Event('input'));
+            statusDisplay.innerText = "Fetch Success";
+            statusDisplay.className = "text-xl font-bold text-green-500";
         } else {
-            throw new Error("The page returned no content.");
+            throw new Error("Empty response");
         }
     } catch (error) {
-        console.error("Fetch Error:", error);
+        console.error("Detailed Error:", error);
         statusDisplay.innerText = "Fetch Failed";
+        statusDisplay.className = "text-xl font-bold text-red-500";
+        
+        // Final helpful advice for the user
+        alert("GitHub Pages Security / CORS Block:\n\nMost sites block direct fetching. Please use 'Method 2' by right-clicking the target page, selecting 'View Page Source', and pasting the code here.");
+    }
+}
         statusDisplay.className = "text-xl font-bold text-red-500";
         alert("Failed to fetch URL. Many large sites (like Google/Amazon) block these proxies. If this happens, please use 'Method 2: Paste Source Code' instead.");
     }
