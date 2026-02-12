@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Insights & Case Studies | Rohit Kumar</title>
+    <style>
+        /* DARK MODE THEME */
+        :root {
+            --bg-color: #0B0C10;       /* Deep Space Black */
+            --card-color: #1F2833;     /* Gunmetal Grey */
+            --accent-color: #66FCF1;   /* Neon Cyan */
+            --text-primary: #FFFFFF;   /* Pure White */
+            --text-secondary: #C5C6C7; /* Silver */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--text-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .home-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .home-link:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .header h1 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+
+        /* BLOG GRID */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* BLOG CARD STYLES */
+        .blog-card {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .category {
+            background-color: rgba(102, 252, 241, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .date {
+            float: right;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        .blog-card h3 {
+            color: var(--text-primary);
+            margin: 15px 0 10px 0;
+            font-size: 1.4rem;
+        }
+
+        .blog-card p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .read-btn {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .read-btn:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">Rohit Kumar</a>
+        <a href="../index.html" class="home-link">← Back to Portfolio</a>
+    </nav>
+
+    <div class="header">
+        <h1>Thoughts & Strategy</h1>
+        <p>Deep dives into Technical SEO, Generative AI (GEO), and scaling news websites to millions of users.</p>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            
+            <article class="blog-card">
+                <div class="card-content">
+                    <div>
+                        <span class="category">Generative AI</span>
+                        <span class="date">Feb 2026</span>
+                    </div>
+                    <h3>The AI Citation Gap & Entity Association Guide</h3>
+                    <p>Why ranking #1 isn't enough anymore. A guide to optimizing for inclusion in ChatGPT, Perplexity, and Gemini.</p>
+                    <a href="ai-citation-gap.html" class="read-btn">Read Article →</a>
+                </div>
+            </article>
+
+            <article class="blog-card" style="opacity: 0.7;">
+                <div class="card-content">
+                    <div>
+                        <span class="category">News SEO</span>
+                        <span class="date">Coming Soon</span>
+                    </div>
+                    <h3>Case Study: Scaling to 4M Daily Users</h3>
+                    <p>A breakdown of the technical architecture and "Top Stories" optimization strategy used at Livehindustan.</p>
+                    <span class="read-btn">Drafting...</span>
+                </div>
+            </article>
+
+            <article class="blog-card" style="opacity: 0.7;">
+                <div class="card-content">
+                    <div>
+                        <span class="category">Technical SEO</span>
+                        <span class="date">Coming Soon</span>
+                    </div>
+                    <h3>Python for SEO: Automating Log Analysis</h3>
+                    <p>How I use Python scripts to identify crawl budget waste and optimize massive sites.</p>
+                    <span class="read-btn">Drafting...</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>
