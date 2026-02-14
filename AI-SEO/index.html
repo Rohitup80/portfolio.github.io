@@ -7,11 +7,11 @@
     <style>
         /* DARK MODE THEME */
         :root {
-            --bg-color: #0B0C10;       /* Deep Space Black */
-            --card-color: #1F2833;     /* Gunmetal Grey */
-            --accent-color: #66FCF1;   /* Neon Cyan */
-            --text-primary: #FFFFFF;   /* Pure White */
-            --text-secondary: #C5C6C7; /* Silver */
+            --bg-color: #0B0C10;       
+            --card-color: #1F2833;     
+            --accent-color: #66FCF1;   
+            --text-primary: #FFFFFF;   
+            --text-secondary: #C5C6C7; 
         }
 
         body {
@@ -92,6 +92,8 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-card:hover {
@@ -101,6 +103,9 @@
 
         .card-content {
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .category {
@@ -131,6 +136,7 @@
             font-size: 0.95rem;
             margin-bottom: 20px;
             color: #bbb;
+            flex-grow: 1; /* Pushes the button to the bottom */
         }
 
         .read-btn {
@@ -139,6 +145,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
+            margin-top: auto; 
         }
 
         .read-btn:hover {
@@ -160,46 +167,51 @@
     </div>
 
     <div class="container">
-        <div class="grid">
-            
-            <article class="blog-card">
-                <div class="card-content">
-                    <div>
-                        <span class="category">Generative AI</span>
-                        <span class="date">Feb 2026</span>
-                    </div>
-                    <h3>The AI Citation Gap & Entity Association Guide</h3>
-                    <p>Why ranking #1 isn't enough anymore. A guide to optimizing for inclusion in ChatGPT, Perplexity, and Gemini.</p>
-                    <a href="ai-citation-gap.html" class="read-btn">Read Article →</a>
-                </div>
-            </article>
-
-            <article class="blog-card" style="opacity: 0.7;">
-                <div class="card-content">
-                    <div>
-                        <span class="category">News SEO</span>
-                        <span class="date">Coming Soon</span>
-                    </div>
-                    <h3>Case Study: Scaling to 4M Daily Users</h3>
-                    <p>A breakdown of the technical architecture and "Top Stories" optimization strategy used at Livehindustan.</p>
-                    <span class="read-btn">Drafting...</span>
-                </div>
-            </article>
-
-            <article class="blog-card" style="opacity: 0.7;">
-                <div class="card-content">
-                    <div>
-                        <span class="category">Technical SEO</span>
-                        <span class="date">Coming Soon</span>
-                    </div>
-                    <h3>Python for SEO: Automating Log Analysis</h3>
-                    <p>How I use Python scripts to identify crawl budget waste and optimize massive sites.</p>
-                    <span class="read-btn">Drafting...</span>
-                </div>
-            </article>
-
-        </div>
+        <div class="grid" id="blog-grid">
+            </div>
     </div>
+
+    <script>
+        // This function fetches the data from posts.json and builds the HTML
+        async function loadBlogPosts() {
+            try {
+                // 1. Fetch the JSON file
+                const response = await fetch('posts.json');
+                const posts = await response.json();
+                
+                // 2. Find the grid container
+                const grid = document.getElementById('blog-grid');
+                let htmlContent = '';
+
+                // 3. Loop through each post and create a card
+                posts.forEach(post => {
+                    htmlContent += `
+                        <article class="blog-card">
+                            <div class="card-content">
+                                <div>
+                                    <span class="category">${post.category}</span>
+                                    <span class="date">${post.date}</span>
+                                </div>
+                                <h3>${post.title}</h3>
+                                <p>${post.description}</p>
+                                <a href="${post.url}" class="read-btn">Read Article →</a>
+                            </div>
+                        </article>
+                    `;
+                });
+
+                // 4. Inject the final HTML into the page
+                grid.innerHTML = htmlContent;
+
+            } catch (error) {
+                console.error("Error loading blog posts:", error);
+                document.getElementById('blog-grid').innerHTML = "<p style='color:red;'>Failed to load blog posts. Please check your posts.json file.</p>";
+            }
+        }
+
+        // Run the function when the page loads
+        loadBlogPosts();
+    </script>
 
 </body>
 </html>

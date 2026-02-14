@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Entity Schema: The Future of Semantic SEO | Rohit Kumar</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rohitup80.github.io/portfolio.github.io/AI-SEO/entity-schema.html"
+      },
+      "headline": "Mastering Entity Schema: The Future of Semantic SEO",
+      "description": "A deep dive into what Entity Schema is, how to identify entities, and how to implement Semantic SEO to dominate Google's Knowledge Graph and Generative AI.",
+      "datePublished": "2026-02-15T08:00:00+08:00",
+      "dateModified": "2026-02-15T08:00:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "Rohit Kumar",
+        "jobTitle": "Senior SEO Analyst",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Hindustan Times"
+        },
+        "url": "https://rohitup80.github.io/portfolio.github.io/",
+        "sameAs": [
+          "https://www.linkedin.com/in/blogger-rohit/",
+          "https://github.com/Rohitup80"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rohit Kumar SEO Portfolio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rohitup80.github.io/portfolio.github.io/assets/images/rohit-profile.jpg"
+        }
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Semantic search",
+          "sameAs": "https://en.wikipedia.org/wiki/Semantic_search"
+        },
+        {
+          "@type": "Thing",
+          "name": "Knowledge Graph",
+          "sameAs": "https://en.wikipedia.org/wiki/Knowledge_Graph"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Search engine optimization",
+          "sameAs": "https://en.wikipedia.org/wiki/Search_engine_optimization"
+        },
+        {
+          "@type": "Organization",
+          "name": "Google",
+          "sameAs": "https://en.wikipedia.org/wiki/Google"
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* DARK MODE THEME (Matches your Portfolio) */
+        :root {
+            --bg-color: #0B0C10;
+            --card-color: #1F2833;
+            --accent-color: #66FCF1;
+            --text-primary: #FFFFFF;
+            --text-secondary: #C5C6C7;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-top: 20px;
+            line-height: 1.2;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* CONTENT STYLES */
+        h2 {
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            background-color: var(--card-color);
+            padding: 20px 40px;
+            border-radius: 10px;
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        .schema-box {
+            background-color: #000;
+            border: 1px solid #333;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #A6E22E; /* Code green */
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .tool-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tool-card {
+            background-color: var(--card-color);
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        /* TABLE STYLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: var(--card-color);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: rgba(102, 252, 241, 0.1);
+            color: var(--accent-color);
+        }
+
+        /* FOOTER */
+        .author-box {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+
+        <header>
+            <h1>Mastering Entity Schema: The Future of Semantic SEO</h1>
+            <div class="meta">
+                <span>By Rohit Kumar</span> | <span>Senior SEO Analyst</span> | <span>Feb 2026</span>
+            </div>
+        </header>
+
+        <h2>Overview</h2>
+        <p>For years, search engines relied on "strings"—matching the exact characters of a keyword typed into a search bar with the characters on a webpage. Today, Google and Generative AI engines (like Gemini and Perplexity) rely on <strong>"things."</strong></p>
+        <p>This page is not just a guide. <strong>It is a live, verifiable example of Entity Schema.</strong> If you inspect the source code of this page and run it through the Schema.org validator, you will see exactly how I have defined the entities driving this content.</p>
+
+        <h2>What is an Entity?</h2>
+        <p>In SEO, an entity is a singular, unique, well-defined, and distinguishable thing or concept. It doesn't have to be a physical object. Entities can be:</p>
+        <ul>
+            <li><strong>People:</strong> Rohit Kumar, Sundar Pichai</li>
+            <li><strong>Organizations:</strong> Hindustan Times, Google</li>
+            <li><strong>Places:</strong> Gurgaon, New Delhi</li>
+            <li><strong>Concepts/Ideas:</strong> Search Engine Optimization, Artificial Intelligence</li>
+        </ul>
+        <p>Google uses the Knowledge Graph to map how these entities relate to one another. </p>
+
+        <h2>How to Identify an Entity</h2>
+        <p>Before you can optimize for an entity, you need to know if search engines actually recognize it as one. Here is how I identify them:</p>
+        
+        <div class="tool-stack">
+            <div class="tool-card">
+                <strong>Google NLP API</strong><br>
+                Paste your content into Google's Natural Language API demo. It will extract and list the exact entities it understands.
+            </div>
+            <div class="tool-card">
+                <strong>Wikipedia / Wikidata</strong><br>
+                If a concept has a Wikipedia page or a Wikidata entry, it is almost certainly a recognized entity.
+            </div>
+            <div class="tool-card">
+                <strong>Google Image Search</strong><br>
+                Search a broad term. The "filter bubbles" (chips) at the top of the image search are related entities.
+            </div>
+        </div>
+
+        <h2>How to Use Entity Schema</h2>
+        <p>You can inject entity data directly into your HTML using JSON-LD schema markup. The two most powerful properties are <code>about</code> and <code>mentions</code>.</p>
+        
+        <div class="schema-box">
+// Example from this page's actual source code:
+"about": [
+  {
+    "@type": "Thing",
+    "name": "Semantic search",
+    "sameAs": "https://en.wikipedia.org/wiki/Semantic_search"
+  }
+],
+"mentions": [
+  {
+    "@type": "Organization",
+    "name": "Google",
+    "sameAs": "https://en.wikipedia.org/wiki/Google"
+  }
+]
+        </div>
+        <p>By linking to the Wikipedia (or Wikidata) URL using <code>sameAs</code>, you eliminate all ambiguity. You are explicitly telling Google: <em>"This page is about the exact concept defined on this specific Wikipedia page."</em></p>
+
+        <h2>Importance of Entity Optimization</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Traditional SEO (Keywords)</th>
+                    <th>Semantic SEO (Entities)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Focuses on keyword density and placement.</td>
+                    <td>Focuses on topical depth and semantic relationships.</td>
+                </tr>
+                <tr>
+                    <td>Struggles with synonyms (e.g., "sneakers" vs. "running shoes").</td>
+                    <td>Understands intent (knows they belong to the same entity family).</td>
+                </tr>
+                <tr>
+                    <td>Language dependent (Hindi vs. English keywords).</td>
+                    <td>Language independent (An entity has a unique ID, regardless of translation).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>How it will help your SEO Strategy</h2>
+        <ul>
+            <li><strong>Disambiguation:</strong> Prevents Google from confusing your brand with another company that shares the same name.</li>
+            <li><strong>Knowledge Panels:</strong> Proper entity structuring is the first step to triggering a Knowledge Panel for your brand or executives.</li>
+            <li><strong>Generative AI (GEO):</strong> LLMs build their summaries based on entity relationships. If you establish strong entity connections, you are more likely to be cited in AI Overviews.</li>
+            <li><strong>Future-Proofing:</strong> As Google moves further away from traditional crawling toward AI-driven understanding, entity schema serves as direct API-like communication with the algorithm.</li>
+        </ul>
+
+        <h2>Verdict</h2>
+        <p>Implementing Entity Schema is no longer optional for enterprise websites. In my work scaling platforms to 4M+ daily users, I have seen firsthand that relying on keyword strings creates a glass ceiling. Embracing entities, Knowledge Graphs, and precise JSON-LD markup is the only way to build sustainable, compounding organic authority in 2026 and beyond.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h3 style="margin-top: 10px;">Does Entity Schema replace Keyword Research?</h3>
+            <p>No. People still search using words (keywords). Keyword research tells you <em>what</em> your audience is looking for; Entity SEO tells search engines <em>exactly</em> what your page is providing to answer that search.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3 style="margin-top: 10px;">How can I verify the Schema on this page?</h3>
+            <p>Right-click this page and select "View Page Source". Copy the JSON-LD script from the <code>&lt;head&gt;</code> section. Paste it into the <a href="https://validator.schema.org/" target="_blank" style="color: var(--accent-color);">Schema.org Validator</a> to see how the entities are perfectly mapped.</p>
+        </div>
+
+        <div class="author-box">
+            <div>
+                <strong>Written by Rohit Kumar</strong><br>
+                <small>Senior SEO Analyst | Expert in Technical & Semantic SEO</small>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
