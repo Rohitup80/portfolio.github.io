@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moolank & Bhagyank Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free numerology calculator to find your Moolank (Root Number) and Bhagyank (Destiny Number) based on your date of birth." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />  
+  <link rel="stylesheet" href="css/styles.css" />  
+</head>
+<body>
+<nav>
+  <div class="page">
+    <div class="nav-content">
+      <a href="../index.html" class="nav-logo">Rohit Kumar</a>
+      
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../index.html#skills">Skills</a></li>
+  <li><a href="../index.html#about">About</a></li>
+  <li><a href="../index.html#contact">Contact</a></li>
+  <li><a href="../tools/check-moolank-and-bhagyank.html" class="active">Moolank &amp; Bhagyank</a></li>
+  <li><a href="../webpage-size-checker/index.html">Webpage Size Checker</a></li>
+</ul>
+    </div>
+  </div>
+</nav>
+  <section class="about" id="about">
+    <div class="calc-container">
+      <div class="calc-header">
+        <h1 class="hero-title">Moolank and Bhagyank Calculator</h1>
+        <p class="hero-subtitle">Discover your Life Path. Enter your details to calculate your Moolank (Root Number) and Bhagyank (Destiny Number).</p>
+      </div>
+
+      <div class="project-impact">
+        <label for="userName">Your Full Name</label>
+        <input class="stack-tag" type="text" id="userName" placeholder="e.g. Virat Kohli" autocomplete="off">
+      </div>
+
+      <div class="project-impact">
+        <label for="userDob">Date of Birth</label>
+        <input class="stack-tag" type="date" id="userDob">
+      </div>
+
+      <button class="calc-button" onclick="calculateNumerology()">Calculate My Numbers</button>
+
+      <div id="resultArea"class="skills">
+        <div class="greeting" id="greetingText"></div>
+        
+        <div class="skills-groups">
+          <div class="skills-card">
+            <div class="num-title section-title">Moolank</div>
+            <div class="num-value" id="moolankResult">-</div>
+          </div>
+          
+          <div class="skills-card">
+            <div class="num-title section-title">Bhagyank</div>
+            <div class="num-value" id="bhagyankResult">-</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Helper function to reduce a number to a single digit (1-9)
+    function reduceToSingleDigit(num) {
+      while (num > 9) {
+        let sum = 0;
+        let digits = num.toString().split('');
+        for (let i = 0; i < digits.length; i++) {
+          sum += parseInt(digits[i]);
+        }
+        num = sum;
+      }
+      return num;
+    }
+
+    function calculateNumerology() {
+      const nameInput = document.getElementById('userName').value.trim();
+      const dobInput = document.getElementById('userDob').value;
+      const resultArea = document.getElementById('resultArea');
+
+      // Validation
+      if (!nameInput) {
+        alert("Please enter your name.");
+        return;
+      }
+      if (!dobInput) {
+        alert("Please select your Date of Birth.");
+        return;
+      }
+
+      // Extract Year, Month, Day from the date picker (Format: YYYY-MM-DD)
+      const dobParts = dobInput.split('-');
+      const yearStr = dobParts[0];
+      const monthStr = dobParts[1];
+      const dayStr = dobParts[2];
+
+      // 1. Calculate Moolank (Sum of the digits of the Day)
+      // Example: 28th -> 2 + 8 = 10 -> 1 + 0 = 1
+      let daySum = 0;
+      for (let i = 0; i < dayStr.length; i++) {
+        daySum += parseInt(dayStr[i]);
+      }
+      const moolank = reduceToSingleDigit(daySum);
+
+      // 2. Calculate Bhagyank (Sum of all digits in DD, MM, YYYY)
+      // Example: 28-10-1995 -> 2+8 + 1+0 + 1+9+9+5 = 35 -> 3+5 = 8
+      const fullDateStr = dayStr + monthStr + yearStr;
+      let totalSum = 0;
+      for (let i = 0; i < fullDateStr.length; i++) {
+        totalSum += parseInt(fullDateStr[i]);
+      }
+      const bhagyank = reduceToSingleDigit(totalSum);
+
+      // 3. Display Results
+      // Capitalize first letter of name for the greeting
+      const firstName = nameInput.split(' ')[0];
+      const capitalizedName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+
+      document.getElementById('greetingText').innerText = `Hello ${capitalizedName}, here are your numbers!`;
+      document.getElementById('moolankResult').innerText = moolank;
+      document.getElementById('bhagyankResult').innerText = bhagyank;
+
+      // Unhide the result area
+      resultArea.style.display = "block";
+    }
+     // Start the auto-slide loop if the gallery exists
+    if (aboutTotalSlides > 0) {
+      autoAboutSlide();
+    }
+  </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Mobile Hamburger Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    // This 'if' statement prevents errors if the script runs on a page missing the nav
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        // Toggles the "active" class on both the button and the menu
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>

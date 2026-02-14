@@ -10,28 +10,33 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav>
-    <div class="page">
-      <div class="nav-content">
-        <a href="index.html" class="nav-logo">Rohit Kumar</a>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+<nav>
+  <div class="page">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">Rohit Kumar</a>
+      
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tools/check-moolank-and-bhagyank.html">Moolank &amp; Bhagyank</a></li>
+        <li><a href="webpage-size-checker/index.html">Webpage Size Checker</a></li>
+      </ul>
     </div>
-  </nav>
-
-
+  </div>
+</nav>
   <div class="page">
        <!-- HERO SECTION -->
     <header class="hero">
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="hero-kicker-dot"></span>
-          Senior SEO Analyst · 6+ Years
+          Sr. SEO Analyst · 6+ Years
         </div>
         <h1 class="hero-title">
           SEO Case Studies for <span>News, Finance & Travel - Rohit Kumar</span>
@@ -70,6 +75,67 @@
         <button class="carousel-dot" onclick="goToHeroSlide(3)"></button>
       </div>
     </div>
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about" id="about">
+      <h2 class="section-title">About Me & My Journey</h2>
+      
+      <div class="about-grid">
+<div class="about-image-col">
+          
+          <div class="about-carousel" id="aboutCarousel">
+            <div class="about-carousel-slide active">
+              <img src="./assets/images/rohit-profile.jpg" alt="Rohit Kumar Profile">
+            </div>
+            <div class="about-carousel-slide">
+              <img src="./assets/images/rohit-working.jpg" alt="Rohit Kumar at Work">
+            </div>
+            <div class="about-carousel-slide">
+              <img src="./assets/images/rohit-travel.jpg" alt="Rohit Kumar SEO Strategy">
+            </div>
+
+            <div class="about-carousel-controls">
+              <button class="about-dot active" onclick="goToAboutSlide(0)"></button>
+              <button class="about-dot" onclick="goToAboutSlide(1)"></button>
+              <button class="about-dot" onclick="goToAboutSlide(2)"></button>
+            </div>
+          </div>
+          <div class="about-image-backdrop"></div>
+        </div>
+
+        <div class="about-text-col">
+          <h3 class="about-heading">Bridging the gap between <span>Code</span> and <span>Content</span>.</h3>
+          
+          <p class="about-text">
+            My journey in digital marketing didn't start with standard SEO practices; it started with coding. Armed with a Bachelor of Computer Applications (BCA), I quickly realized that to truly dominate search engines, you can't just write good content—you have to engineer the platform it lives on.
+          </p>
+          
+          <p class="about-text">
+            Over the past 6+ years, I've leveraged this hybrid skillset to scale enterprise media and e-commerce brands. From maintaining rock-solid technical stability for over <strong>4 Million Daily Active Users</strong> at Hindustan Times, to building ZamZam.com's organic presence from scratch to 600K monthly visits. I've even built, scaled, and successfully sold my own news portal, giving me a true "founder's mindset" when managing enterprise growth.
+          </p>
+
+          <p class="about-text">
+            I don't just hand over audit documents. Whether I am writing Python scripts for log analysis, executing SQL queries for data visualization, or building custom WordPress architectures, my goal is always the same: <strong>Data-driven, ROI-first growth.</strong>
+          </p>
+
+          <div class="about-stats-row">
+            <div class="about-stat">
+              <span class="stat-number">6+</span>
+              <span class="stat-text">Years Exp.</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-number">4M+</span>
+              <span class="stat-text">Daily Users</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-number">Full</span>
+              <span class="stat-text">Stack SEO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS SECTION -->
     <section>
@@ -932,6 +998,63 @@
       if (event.key === 'ArrowLeft') changeHeroSlide(-1);
       if (event.key === 'ArrowRight') changeHeroSlide(1);
     });
+
+    // ==========================================
+    // About Section Auto-Gallery Logic
+    // ==========================================
+    let currentAboutSlide = 0;
+    const aboutSlides = document.querySelectorAll('#aboutCarousel .about-carousel-slide');
+    const aboutDots = document.querySelectorAll('#aboutCarousel .about-dot');
+    const aboutTotalSlides = aboutSlides.length;
+    let aboutAutoSlideTimer;
+
+    function showAboutSlide(index) {
+      if (aboutTotalSlides === 0) return; // Failsafe
+      
+      currentAboutSlide = (index + aboutTotalSlides) % aboutTotalSlides;
+      
+      // Remove active class from all
+      aboutSlides.forEach(slide => slide.classList.remove('active'));
+      aboutDots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to current
+      aboutSlides[currentAboutSlide].classList.add('active');
+      if (aboutDots.length > 0) {
+        aboutDots[currentAboutSlide].classList.add('active');
+      }
+      
+      resetAboutAutoSlide();
+    }
+
+    function goToAboutSlide(index) {
+      showAboutSlide(index);
+    }
+
+    function autoAboutSlide() {
+      if (aboutTotalSlides === 0) return;
+      aboutAutoSlideTimer = setTimeout(() => {
+        showAboutSlide(currentAboutSlide + 1);
+      }, 4000); // Changes image every 4 seconds
+    }
+
+    function resetAboutAutoSlide() {
+      clearTimeout(aboutAutoSlideTimer);
+      autoAboutSlide();
+    }
+
+    // Start the auto-slide loop if the gallery exists
+    if (aboutTotalSlides > 0) {
+      autoAboutSlide();
+    }
+  // Mobile Hamburger Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    // Toggles the "active" class on both the button (for the X animation) and the menu (to show/hide)
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
   </script>
 </body>
 </html>
