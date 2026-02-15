@@ -9,26 +9,7 @@
 
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen">
-<nav>
-  <div class="page">
-    <div class="nav-content">
-      <a href="../index.html" class="nav-logo">Rohit Kumar</a>
-      
-      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-  <li><a href="../index.html">Home</a></li>
-  <li><a href="../index.html#skills">Skills</a></li>
-  <li><a href="../index.html#about">About</a></li>
-  <li><a href="../index.html#contact">Contact</a></li>
-  <li><a href="../tools/check-moolank-and-bhagyank.html" class="active">Moolank &amp; Bhagyank</a></li>
-  <li><a href="../webpage-size-checker/index.html">Webpage Size Checker</a></li>
-</ul>
-    </div>
-  </div>
-</nav>
+<div id="nav-placeholder"></div>
 
     <div class="max-w-4xl mx-auto py-12 px-4">
         <header class="text-center mb-10">
@@ -187,21 +168,7 @@
     navLinks.classList.toggle('active');
   });
     </script>
-     <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Mobile Hamburger Menu Logic
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('nav-links');
-
-    // This 'if' statement prevents errors if the script runs on a page missing the nav
-    if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => {
-        // Toggles the "active" class on both the button and the menu
-        mobileMenuBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-      });
-    }
-  });
-</script>
+     <script src="../js/nav.js"></script>
+<script>createNav("../", "moolank");</script>
 </body>
 </html>

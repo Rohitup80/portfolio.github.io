@@ -10,26 +10,7 @@
 </head>
 <body>
   <!-- Navigation -->
-<nav>
-  <div class="page">
-    <div class="nav-content">
-      <a href="index.html" class="nav-logo">Rohit Kumar</a>
-      
-      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="tools/check-moolank-and-bhagyank.html">Moolank &amp; Bhagyank</a></li>
-        <li><a href="webpage-size-checker/index.html">Webpage Size Checker</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<div id="nav-placeholder"></div>
   <div class="page">
        <!-- HERO SECTION -->
     <header class="hero">
@@ -869,7 +850,7 @@
       <h2 class="section-title">Latest Insights about AI SEO</h2>
       <h3>The AI Citation Gap & Entity Association Guide (2026)</h3>
           <p>Being ranked #1 is no longer enough. Learn how to optimize for inclusion in ChatGPT, Gemini, and Perplexity.</p>
-          <a href="AI-SEO/citation-gap.html" class="btn">Read Article</a>
+          <a href="AI-SEO/index.html" class="contact-cta"> <span>↗</span> Read Blogs Now</a>
     </section>
         <section class="about" id="about">
       <h2 class="section-title">Check the Webpage Size - 2MB</h2>
@@ -1046,15 +1027,10 @@
     if (aboutTotalSlides > 0) {
       autoAboutSlide();
     }
-  // Mobile Hamburger Menu Logic
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    // Toggles the "active" class on both the button (for the X animation) and the menu (to show/hide)
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
   </script>
+
+  <script src="js/nav.js"></script>
+  <script>createNav("", "home");</script>
+
 </body>
 </html>
